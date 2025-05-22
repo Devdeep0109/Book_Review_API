@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "5210effc-6152-4d98-97af-cce90b3671c9",
+		"name": "Book_review_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24629755"
+	},
+	"item": [
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ansh\",\r\n    \"password\":\"ansh12@\",\r\n    \"email\":\"ansh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"ansh12@\",\r\n    \"email\":\"ansh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODJmMjY1MTY4YTlkODhmYzI1ZDJjN2UiLCJlbWFpbCI6ImFuc2hAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbnNoIiwiaWF0IjoxNzQ3OTIxMzY4LCJleHAiOjE3NDgwOTQxNjh9.4qR_wf-OqYugbeRIsqwztTmmcUmLYnwDuFmr_1YeTGY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Clean Code\",\r\n  \"author\": \"Robert C. Martin\",\r\n  \"genre\": \"Programming\",\r\n  \"description\": \"A handbook of agile software craftsmanship.\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View_All_Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookFullDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books/682f4d97bd19c55feb7d6337",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"682f4d97bd19c55feb7d6337"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book_Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODJmMjY1MTY4YTlkODhmYzI1ZDJjN2UiLCJlbWFpbCI6ImFuc2hAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbnNoIiwiaWF0IjoxNzQ3OTI4MDI3LCJleHAiOjE3NDgxMDA4Mjd9.GqZ7ejhAM9m15XZgUc-Rpw4rhh7zjoeWdCQDpT138nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"Even better after my second read!\",\r\n  \"averageRating\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books/682f445e99ac784b2a46e6e3/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"682f445e99ac784b2a46e6e3",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODJmNDdkNDNiNzQ3ZTE5MjEwOGU5MDciLCJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJhbSIsImlhdCI6MTc0NzkyOTA2MCwiZXhwIjoxNzQ4MTAxODYwfQ.t7ExPLFAjwVCRLTxxah-CIwq1-tGJQBfpIneBVAB_Os",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"Updated review content\",\r\n  \"averageRating\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews/682f4e55bd19c55feb7d633d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"682f4e55bd19c55feb7d633d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODJmNDdkNDNiNzQ3ZTE5MjEwOGU5MDciLCJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJhbSIsImlhdCI6MTc0NzkyOTA2MCwiZXhwIjoxNzQ4MTAxODYwfQ.t7ExPLFAjwVCRLTxxah-CIwq1-tGJQBfpIneBVAB_Os",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/reviews/682f4e55bd19c55feb7d633d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"682f4e55bd19c55feb7d633d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search_Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search?q=clean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "clean"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
